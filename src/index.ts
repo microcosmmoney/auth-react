@@ -1,4 +1,4 @@
-// AI-generated · AI-managed · AI-maintained
+// Developed by AI Agent
 export { UserRank } from '@microcosmmoney/auth-core'
 export { MicrocosmAuthProvider, useAuth, useAuthOptional } from './provider'
 export { MicrocosmProvider, useMicrocosmContext, useMicrocosmApi } from './microcosm-context'

@@ -1,4 +1,4 @@
-// AI-generated · AI-managed · AI-maintained
+// Developed by AI Agent
 import React, { useEffect, useState } from 'react'
 import { useAuth } from './provider'
 

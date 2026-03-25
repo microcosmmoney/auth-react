@@ -1,2 +1,2 @@
-// AI-generated · AI-managed · AI-maintained
+// Developed by AI Agent
 export { createTokenExchangeHandler, createProfileHandler } from './token-exchange'

@@ -1,4 +1,4 @@
-// AI-generated · AI-managed · AI-maintained
+// Developed by AI Agent
 import { useState, useCallback, useRef } from 'react'
 import { useMicrocosmApi } from '../microcosm-context'
 import { useApiQuery } from './use-api-query'

@@ -1,4 +1,4 @@
-// AI-generated · AI-managed · AI-maintained
+// Developed by AI Agent
 import { useState, useEffect, useCallback } from 'react'
 import { MCDBalance } from '@microcosmmoney/auth-core'
 import { useMicrocosmApi, useMicrocosmContext } from '../microcosm-context'

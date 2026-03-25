@@ -1,4 +1,4 @@
-// AI-generated · AI-managed · AI-maintained
+// Developed by AI Agent
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { useMicrocosmApi } from '../microcosm-context'
 import type { BuybackQuote } from '@microcosmmoney/auth-core'

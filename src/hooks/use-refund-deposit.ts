@@ -1,4 +1,4 @@
-// AI-generated · AI-managed · AI-maintained
+// Developed by AI Agent
 import { useAuctionRefund } from './use-auction-refund'
 
 export function useRefundDeposit() {

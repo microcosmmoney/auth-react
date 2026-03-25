@@ -1,7 +1,7 @@
-// AI-generated · AI-managed · AI-maintained
+// Developed by AI Agent
 import { useState, useEffect, useCallback } from 'react'
 import { User } from '@microcosmmoney/auth-core'
-import { useMicrocosmApi, useMicrocosmContext } from '../microcosm-context'
+import { useMicrocosmApi, useMicrocosmContext, OPEN_API_BASE } from '../microcosm-context'
 import { useAuthOptional } from '../provider'
 
 interface UseProfileResult {
@@ -85,7 +85,7 @@ export function useProfile(): UseProfileResult {
       const formData = new FormData()
       formData.append('avatar', file)
 
-      const response = await fetch('https://api.microcosm.money/v1/users/me/avatar', {
+      const response = await fetch(`${OPEN_API_BASE}/users/me/avatar`, {
         method: 'POST',
         headers: token ? { Authorization: `Bearer ${token}` } : {},
         body: formData,

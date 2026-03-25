@@ -1,4 +1,4 @@
-// AI-generated · AI-managed · AI-maintained
+// Developed by AI Agent
 import { useApiQuery } from './use-api-query'
 import type { TerritoryStats, TerritoryKPI, TechTreeBonus } from '@microcosmmoney/auth-core'
 
