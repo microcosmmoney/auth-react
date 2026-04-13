@@ -33,9 +33,10 @@ export function useMicrocosmContext(): MicrocosmContextValue {
 
 interface MicrocosmApi {
   get: <T = any>(path: string) => Promise<T>
-  post: <T = any>(path: string, body: unknown) => Promise<T>
-  put: <T = any>(path: string, body: unknown) => Promise<T>
-  patch: <T = any>(path: string, body: unknown) => Promise<T>
+  post: <T = any>(path: string, body?: unknown) => Promise<T>
+  put: <T = any>(path: string, body?: unknown) => Promise<T>
+  patch: <T = any>(path: string, body?: unknown) => Promise<T>
+  delete: <T = any>(path: string) => Promise<T>
 }
 
 async function apiFetch<T>(
@@ -96,11 +97,13 @@ export function useMicrocosmApi(): MicrocosmApi {
   return useMemo(() => ({
     get: <T = any>(path: string) =>
       apiFetch<T>(path, getAccessToken),
-    post: <T = any>(path: string, body: unknown) =>
-      apiFetch<T>(path, getAccessToken, { method: 'POST', body: JSON.stringify(body) }),
-    put: <T = any>(path: string, body: unknown) =>
-      apiFetch<T>(path, getAccessToken, { method: 'PUT', body: JSON.stringify(body) }),
-    patch: <T = any>(path: string, body: unknown) =>
-      apiFetch<T>(path, getAccessToken, { method: 'PATCH', body: JSON.stringify(body) }),
+    post: <T = any>(path: string, body?: unknown) =>
+      apiFetch<T>(path, getAccessToken, { method: 'POST', body: body === undefined ? undefined : JSON.stringify(body) }),
+    put: <T = any>(path: string, body?: unknown) =>
+      apiFetch<T>(path, getAccessToken, { method: 'PUT', body: body === undefined ? undefined : JSON.stringify(body) }),
+    patch: <T = any>(path: string, body?: unknown) =>
+      apiFetch<T>(path, getAccessToken, { method: 'PATCH', body: body === undefined ? undefined : JSON.stringify(body) }),
+    delete: <T = any>(path: string) =>
+      apiFetch<T>(path, getAccessToken, { method: 'DELETE' }),
   }), [getAccessToken])
 }
