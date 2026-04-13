@@ -17,6 +17,8 @@ export { useMCDStats } from './hooks/use-mcd-stats'
 export { useMiningStats } from './hooks/use-mining-stats'
 export { useMiningRecords } from './hooks/use-mining-records'
 export { useUserLevel } from './hooks/use-user-level'
+export { useLevelProgress } from './hooks/use-level-progress'
+export { useTerritoryHoldings } from './hooks/use-territory-holdings'
 
 export { useTerritoryNFTs } from './hooks/use-territory-nfts'
 export { useAuctions } from './hooks/use-auctions'
