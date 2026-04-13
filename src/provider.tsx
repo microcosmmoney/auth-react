@@ -1,4 +1,3 @@
-// Developed by AI Agent
 import React, { createContext, useContext, useEffect, useState, useMemo, useCallback } from 'react'
 import {
   MicrocosmAuthClient,

@@ -1,4 +1,3 @@
-// Developed by AI Agent
 import { useState, useCallback } from 'react'
 import { useMicrocosmApi } from '../microcosm-context'
 

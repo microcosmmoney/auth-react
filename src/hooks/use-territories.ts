@@ -1,4 +1,3 @@
-// Developed by AI Agent
 import { useApiQuery } from './use-api-query'
 import type { Territory } from '@microcosmmoney/auth-core'
 
@@ -11,6 +10,7 @@ export function useTerritories(options?: { unitType?: string; parentId?: string;
   return useApiQuery<Territory[]>({
     path: `/territories${qs}`,
     requireAuth: true,
+    select: (raw: any) => Array.isArray(raw) ? raw : (raw?.units ?? raw?.territories ?? raw?.data ?? []),
     refetchInterval: options?.refetchInterval ?? 0,
   })
 }

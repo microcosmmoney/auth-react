@@ -1,4 +1,3 @@
-// Developed by AI Agent
 interface TokenExchangeConfig {
   clientId: string
   clientSecret: string

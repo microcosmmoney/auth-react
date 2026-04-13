@@ -1,11 +1,10 @@
-// Developed by AI Agent
 import { useApiQuery } from './use-api-query'
-import type { TerritoryStats, TerritoryKPI, TechTreeBonus } from '@microcosmmoney/auth-core'
+import type { TerritoryStats, TerritoryKPI, TechBonusDetail } from '@microcosmmoney/auth-core'
 
 export interface TerritoryDetailedStats {
   stats: TerritoryStats
   kpi?: TerritoryKPI
-  tech_bonus?: TechTreeBonus
+  tech_bonus?: TechBonusDetail
 }
 
 export function useTerritoryDetailedStats(territoryId: string, options?: { refetchInterval?: number }) {

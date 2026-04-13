@@ -1,4 +1,3 @@
-// Developed by AI Agent
 import { useApiQuery } from './use-api-query'
 import type { TerritoryMember } from '@microcosmmoney/auth-core'
 
@@ -9,6 +8,7 @@ export function useTerritoryMembers(id?: string, options?: { page?: number; page
     path: `/territories/${id}/members?page=${page}&page_size=${pageSize}`,
     requireAuth: true,
     skip: !id,
+    select: (raw: any) => Array.isArray(raw) ? raw : (raw?.members ?? []),
     refetchInterval: options?.refetchInterval ?? 0,
   })
 }

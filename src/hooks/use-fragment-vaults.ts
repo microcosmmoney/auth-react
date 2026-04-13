@@ -1,4 +1,3 @@
-// Developed by AI Agent
 import { useApiQuery } from './use-api-query'
 
 export function useFragmentVaults(options?: { refetchInterval?: number }) {

@@ -1,4 +1,3 @@
-// Developed by AI Agent
 import { useApiQuery } from './use-api-query'
 import type { MiningDistribution, PaginatedResult } from '@microcosmmoney/auth-core'
 

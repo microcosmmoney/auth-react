@@ -1,4 +1,3 @@
-// Developed by AI Agent
 import { useApiQuery } from './use-api-query'
 import type { Proposal } from '@microcosmmoney/auth-core'
 
@@ -10,6 +9,7 @@ export function useProposals(options?: { status?: string; page?: number; pageSiz
   return useApiQuery<Proposal[]>({
     path: `/voting/proposals${qs}`,
     requireAuth: true,
+    select: (raw: any) => Array.isArray(raw) ? raw : (raw?.proposals ?? []),
     refetchInterval: options?.refetchInterval ?? 0,
   })
 }

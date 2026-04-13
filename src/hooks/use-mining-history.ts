@@ -1,4 +1,3 @@
-// Developed by AI Agent
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { useMicrocosmApi, useMicrocosmContext } from '../microcosm-context'
 import type { MiningHistoryItem, PaginatedResult } from '@microcosmmoney/auth-core'

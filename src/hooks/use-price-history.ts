@@ -1,4 +1,3 @@
-// Developed by AI Agent
 import { useApiQuery } from './use-api-query'
 import type { PriceHistoryPoint } from '@microcosmmoney/auth-core'
 

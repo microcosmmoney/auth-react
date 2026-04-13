@@ -1,8 +1,7 @@
-// Developed by AI Agent
 import { useState, useCallback, useRef } from 'react'
 import { useMicrocosmApi } from '../microcosm-context'
 
-export function useTechTreeAction() {
+export function useTechBonusAction() {
   const api = useMicrocosmApi()
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<Error | null>(null)
@@ -12,7 +11,7 @@ export function useTechTreeAction() {
     try {
       setLoading(true)
       setError(null)
-      const res = await api.post<{ success: boolean; data: any }>('/tech-tree/unlock', { node_id: nodeId })
+      const res = await api.post<{ success: boolean; data: any }>('/tech-bonus/unlock', { node_id: nodeId })
       return res.data
     } catch (err) {
       const e = err instanceof Error ? err : new Error(String(err))
@@ -27,7 +26,7 @@ export function useTechTreeAction() {
     try {
       setLoading(true)
       setError(null)
-      const res = await api.post<{ success: boolean; data: any }>('/tech-tree/upgrade', { node_id: nodeId })
+      const res = await api.post<{ success: boolean; data: any }>('/tech-bonus/upgrade', { node_id: nodeId })
       return res.data
     } catch (err) {
       const e = err instanceof Error ? err : new Error(String(err))

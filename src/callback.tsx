@@ -1,4 +1,3 @@
-// Developed by AI Agent
 import React, { useEffect, useState } from 'react'
 import { useAuth } from './provider'
 

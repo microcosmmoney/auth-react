@@ -1,4 +1,3 @@
-// Developed by AI Agent
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { useMicrocosmApi } from '../microcosm-context'
 import type { DashboardMarketSummary, DashboardUserSummary } from '@microcosmmoney/auth-core'

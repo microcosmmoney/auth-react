@@ -1,4 +1,3 @@
-// Developed by AI Agent
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { useMicrocosmApi, useMicrocosmContext } from '../microcosm-context'
 
@@ -15,6 +14,14 @@ export interface UseApiQueryResult<T> {
   loading: boolean
   error: Error | null
   refresh: () => Promise<void>
+}
+
+/** Safely unwrap API response data: if `raw` is a `{success, data}` wrapper, extract `data` */
+function unwrapData(raw: any): any {
+  if (raw && typeof raw === 'object' && !Array.isArray(raw) && 'success' in raw && 'data' in raw) {
+    return raw.data
+  }
+  return raw
 }
 
 export function useApiQuery<T = any>(options: UseApiQueryOptions<T>): UseApiQueryResult<T> {
@@ -37,7 +44,8 @@ export function useApiQuery<T = any>(options: UseApiQueryOptions<T>): UseApiQuer
       setLoading(true)
       const res = await api.get<{ success: boolean; data: any }>(options.path)
       if (mountedRef.current) {
-        setData(options.select ? options.select(res.data) : res.data)
+        const raw = unwrapData(res.data)
+        setData(options.select ? options.select(raw) : raw)
         setError(null)
       }
     } catch (err) {

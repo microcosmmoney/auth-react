@@ -1,4 +1,3 @@
-// Developed by AI Agent
 import { useState, useEffect, useCallback } from 'react'
 import { MCCBalance, MCCPrice } from '@microcosmmoney/auth-core'
 import { useMicrocosmApi, useMicrocosmContext } from '../microcosm-context'

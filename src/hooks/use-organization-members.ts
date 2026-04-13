@@ -1,4 +1,3 @@
-// Developed by AI Agent
 import { useApiQuery } from './use-api-query'
 
 export function useOrganizationMembers(orgId?: number, options?: { page?: number; pageSize?: number; refetchInterval?: number }) {

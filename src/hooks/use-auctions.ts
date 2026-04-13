@@ -1,4 +1,3 @@
-// Developed by AI Agent
 import { useApiQuery } from './use-api-query'
 import type { Auction } from '@microcosmmoney/auth-core'
 
@@ -23,6 +22,7 @@ export function useAuctions(options?: AuctionFilters) {
 
   return useApiQuery<Auction[]>({
     path,
+    select: (raw: any) => Array.isArray(raw) ? raw : (raw?.auctions ?? []),
     refetchInterval: options?.refetchInterval ?? 60_000,
   })
 }

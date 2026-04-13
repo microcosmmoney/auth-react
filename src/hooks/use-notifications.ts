@@ -1,4 +1,3 @@
-// Developed by AI Agent
 import { useApiQuery } from './use-api-query'
 
 export interface Notification {
@@ -17,6 +16,7 @@ export function useNotifications(options?: { refetchInterval?: number; unreadOnl
   const qs = params.toString()
   return useApiQuery<Notification[]>({
     path: `/notifications${qs ? `?${qs}` : ''}`,
+    select: (raw: any) => Array.isArray(raw) ? raw : (raw?.notifications ?? []),
     refetchInterval: options?.refetchInterval ?? 30_000,
   })
 }

@@ -1,9 +1,8 @@
-// Developed by AI Agent
 'use client'
 
 import React, { createContext, useContext, useMemo } from 'react'
 
-export const OPEN_API_BASE = 'https://api.microcosm.money/v1'
+const OPEN_API_BASE = 'https://api.microcosm.money/v1'
 
 interface MicrocosmContextValue {
   getAccessToken: () => Promise<string | null>
@@ -39,13 +38,10 @@ interface MicrocosmApi {
   patch: <T = any>(path: string, body: unknown) => Promise<T>
 }
 
-const MAX_RETRY_COUNT = 3
-
 async function apiFetch<T>(
   path: string,
   getAccessToken: () => Promise<string | null>,
   options: RequestInit = {},
-  retryCount: number = 0,
 ): Promise<T> {
   const token = await getAccessToken()
 
@@ -68,12 +64,9 @@ async function apiFetch<T>(
   })
 
   if (response.status === 429) {
-    if (retryCount >= MAX_RETRY_COUNT) {
-      throw new Error('Rate limited: too many requests. Please try again later.')
-    }
     const retryAfter = parseInt(response.headers.get('Retry-After') || '60')
     await new Promise(resolve => setTimeout(resolve, retryAfter * 1000))
-    return apiFetch(path, getAccessToken, options, retryCount + 1)
+    return apiFetch(path, getAccessToken, options)
   }
 
   const contentType = response.headers.get('content-type')

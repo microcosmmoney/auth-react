@@ -1,4 +1,3 @@
-// Developed by AI Agent
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { useMicrocosmApi } from '../microcosm-context'
 
@@ -18,7 +17,9 @@ export function useAuctionHistory(params?: { page?: number; page_size?: number }
       setLoading(true)
       const res = await api.get<{ success: boolean; data: any }>(`/auction-solana/history?page=${page}&page_size=${pageSize}`)
       if (mountedRef.current) {
-        setData(res.data)
+        const raw = res.data
+        const unwrapped = raw && typeof raw === 'object' && !Array.isArray(raw) && 'success' in raw && 'data' in raw ? raw.data : raw
+        setData(unwrapped)
         setError(null)
       }
     } catch (err) {

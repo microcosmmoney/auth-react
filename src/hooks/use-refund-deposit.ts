@@ -1,4 +1,3 @@
-// Developed by AI Agent
 import { useAuctionRefund } from './use-auction-refund'
 
 export function useRefundDeposit() {

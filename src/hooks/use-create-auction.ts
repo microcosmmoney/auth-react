@@ -1,4 +1,3 @@
-// Developed by AI Agent
 import { useState, useCallback, useRef } from 'react'
 import { useMicrocosmApi } from '../microcosm-context'
 import type { AuctionCreateInput } from '@microcosmmoney/auth-core'
