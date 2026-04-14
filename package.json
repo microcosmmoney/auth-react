@@ -1,6 +1,6 @@
 {
   "name": "@microcosmmoney/auth-react",
-  "version": "2.5.0",
+  "version": "2.6.0",
   "description": "Microcosm OAuth 2.0 React/Next.js adapter",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

@@ -23,6 +23,8 @@ export { useEmailVerification } from './hooks/use-email-verification'
 export type { UseEmailVerificationResult } from './hooks/use-email-verification'
 export { useTwoFactor } from './hooks/use-two-factor'
 export type { UseTwoFactorResult, TwoFactorStatus, TwoFactorSetupData } from './hooks/use-two-factor'
+export { useEcosystemOperations } from './hooks/use-ecosystem-operations'
+export type { EcosystemOperationsData, EcosystemEpoch, EcosystemLp, EcosystemMining, EcosystemBuyback } from './hooks/use-ecosystem-operations'
 
 export { useTerritoryNFTs } from './hooks/use-territory-nfts'
 export { useAuctions } from './hooks/use-auctions'
