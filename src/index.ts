@@ -102,6 +102,7 @@ export { useAuctionConfig } from './hooks/use-auction-config'
 export { useFragmentConfig } from './hooks/use-fragment-config'
 export { useLendingStats } from './hooks/use-lending-stats'
 export { useMCCMiningHistory } from './hooks/use-mcc-mining-history'
+export { useMCCAcquisitions, type MCCAcquisitionEvent, type MCCAcquisitionsData, type UseMCCAcquisitionsResult } from './hooks/use-mcc-acquisitions'
 export { useDashboardUserStats } from './hooks/use-dashboard-user-stats'
 export { useDashboardTerritoryStats } from './hooks/use-dashboard-territory-stats'
 

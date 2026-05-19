@@ -1,8 +1,9 @@
 import { useApiQuery } from './use-api-query'
 
-export function useMCCMiningHistory(days = 30, options?: { refetchInterval?: number }) {
+export function useMCCMiningHistory(_days = 30, options?: { refetchInterval?: number }) {
   return useApiQuery<any[]>({
-    path: `/reincarnation/mining-history?days=${days}`,
+    path: `/mcc/history?tx_type=mining&page_size=200`,
+    requireAuth: true,
     select: (raw: any) => Array.isArray(raw) ? raw : (raw?.records ?? raw?.history ?? []),
     refetchInterval: options?.refetchInterval ?? 300_000,
   })
