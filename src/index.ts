@@ -4,7 +4,7 @@ export { MicrocosmProvider, useMicrocosmContext, useMicrocosmApi } from './micro
 export type { MicrocosmProviderProps } from './microcosm-context'
 export { AuthCallback } from './callback'
 export { withAuth } from './with-auth'
-export { RequireRole } from './require-role'
+export { RoleGate, RequireRole } from './require-role'
 
 export { useMCD } from './hooks/use-mcd'
 export { useMCC } from './hooks/use-mcc'

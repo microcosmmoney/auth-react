@@ -7,7 +7,7 @@ interface RequireRoleProps {
   fallback?: React.ReactNode
 }
 
-export function RequireRole({ roles, children, fallback }: RequireRoleProps) {
+export function RoleGate({ roles, children, fallback }: RequireRoleProps) {
   const { user } = useAuth()
 
   if (!user || !roles.includes(user.role)) {
@@ -16,3 +16,5 @@ export function RequireRole({ roles, children, fallback }: RequireRoleProps) {
 
   return <>{children}</>
 }
+
+export const RequireRole = RoleGate
