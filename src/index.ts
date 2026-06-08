@@ -23,6 +23,8 @@ export { useEmailVerification } from './hooks/use-email-verification'
 export type { UseEmailVerificationResult } from './hooks/use-email-verification'
 export { useTwoFactor } from './hooks/use-two-factor'
 export type { UseTwoFactorResult, TwoFactorStatus, TwoFactorSetupData } from './hooks/use-two-factor'
+export { useChangePassword } from './hooks/use-change-password'
+export type { UseChangePasswordResult, ChangePasswordResult } from './hooks/use-change-password'
 export { useEcosystemOperations } from './hooks/use-ecosystem-operations'
 export type { EcosystemOperationsData, EcosystemEpoch, EcosystemLp, EcosystemMining, EcosystemBuyback } from './hooks/use-ecosystem-operations'
 
