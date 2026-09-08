@@ -25,7 +25,7 @@ export function useNotificationAction() {
     try {
       setLoading(true)
       setError(null)
-      return await api.post<{ success: boolean }>('/notifications/read-all', {})
+      return await api.post<{ success: boolean }>('/notifications/read', {})
     } catch (err) {
       const e = err instanceof Error ? err : new Error(String(err))
       if (mountedRef.current) setError(e)
